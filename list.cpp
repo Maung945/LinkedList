@@ -52,3 +52,28 @@ void List::insert(int n, int x) {
 	tail->next = newNodePointer;
 	tail = tail->next;
 }
+
+void List::remove(int x) {
+	if (head == nullptr) {
+		return;
+	}
+
+	if (head->data == x) {
+		Node *dp = head;
+		head = head->next;
+		if (head == nullptr) {
+			tail = nullptr;
+		}
+		delete dp;
+	}
+	for (Node* np = head; np != nullptr; np = np->next) {
+		if (np->next->data == x) {
+			Node* dp = np->next;
+			np->next = np->next->next;
+			if (np->next == nullptr){
+				tail = np;
+			}
+			delete dp;
+		}
+	}
+}

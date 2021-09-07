@@ -12,6 +12,7 @@ public:
 	~List();
 	void append(int);
 	void insert(int, int);
+	void remove(int);
 	void display();
 };
 

@@ -14,5 +14,8 @@ int main() {
 	l1.display();
 	l1.insert(4, 1);
 	l1.display();
+	l1.remove(5);
+	l1.display();
+	
 	return 0;
 }
